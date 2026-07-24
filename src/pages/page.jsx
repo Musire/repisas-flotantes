@@ -1,5 +1,5 @@
 export default function RootPage () {
     return (
-        <div className="flex-1 bg-success">root page</div>
+        <div className="flex-1 bg-primary">root page</div>
     );
 }
