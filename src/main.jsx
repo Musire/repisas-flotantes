@@ -5,12 +5,9 @@ import routes from '~react-pages';
 import './globals.css';
 import { formatNextRoutes } from './utils/formatNextRoutes';
 
-console.log(routes)
 
 const formattedRoutes = formatNextRoutes(routes);
-console.log(formattedRoutes)
 const router = createBrowserRouter(formattedRoutes)
-
 
 
 createRoot(document.getElementById('root')).render(

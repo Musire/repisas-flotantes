@@ -7,10 +7,13 @@ export * from './Container';
 export * from './Divider';
 export * from './Footer';
 export * from './Icon';
+export * from "./Image";
+export * from './Link';
 export * from './Modal';
 export * from './Navbar';
 export * from './PriceCard';
-export * from './Sections';
+export * from "./ScrollHandler";
 export * from './SectionTitle';
 export * from './Tabs';
 export * from './WhatsAppButton';
+
