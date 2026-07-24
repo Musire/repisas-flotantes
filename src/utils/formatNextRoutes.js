@@ -103,10 +103,16 @@ function cleanPath(rawPath) {
     return '*';
   }
 
+  // Extended: Convert double-bracket optional catch-all / optional params:
+  // [[...slug]] -> *
+  // [[id]] -> :id?
+  path = path.replace(/\[\[\.\.\.([^\]]+)\]\]/g, '*');
+  path = path.replace(/\[\[([^\]]+)\]\]/g, ':$1?');
+
   // Convert catch-all: [...slug] -> *
   path = path.replace(/\[\.\.\.([^\]]+)\]/g, '*');
 
-  // Convert dynamic params: [id] -> :id
+  // Convert standard dynamic params: [id] -> :id
   path = path.replace(/\[([^\]]+)\]/g, ':$1');
 
   return path;
