@@ -14,7 +14,13 @@ function findScrollContainer(element) {
   return document.getElementById('app-layout-container') || window;
 }
 
-export default function Link({ href, children, className = '', ...props }) {
+export default function Link({ 
+  href, 
+  children, 
+  className = '', 
+  onClick = null, 
+  ...props 
+}) {
   const navigate = useNavigate();
   const location = useLocation();
   const linkRef = useRef(null);
@@ -37,17 +43,18 @@ export default function Link({ href, children, className = '', ...props }) {
   }, [href, location.pathname]);
 
   const handleClick = (e) => {
+    if (typeof onClick === 'function') {
+      onClick(e);
+    }
+
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     e.preventDefault();
 
-    // 🎯 AUTO-DETECT: Dynamically find who owns the scrollbar relative to this link instance
     const container = findScrollContainer(linkRef.current);
 
-    // CASE 1: Pure Scroll-to-Top ("#")
     if (href === '#') {
       if (container && container !== window) {
         container.scrollTo({ top: 0, behavior: 'smooth' });
-        // Hard-force fallback if smooth transitions are blocked by CSS rules
         if (container.scrollTop > 0) container.scrollTop = 0;
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,7 +63,6 @@ export default function Link({ href, children, className = '', ...props }) {
       return;
     }
 
-    // CASE 2: Same-page element scrolling (e.g. href="#footer-landing")
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element && container && container !== window) {
@@ -69,7 +75,6 @@ export default function Link({ href, children, className = '', ...props }) {
       return;
     }
 
-    // CASE 3: Standard cross-page routing
     const [path] = href.split('#');
     if (path === location.pathname) {
       const hashIndex = href.indexOf('#');

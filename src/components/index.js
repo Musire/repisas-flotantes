@@ -8,12 +8,14 @@ export * from './Divider';
 export * from './Footer';
 export * from './Icon';
 export * from "./Image";
+export * from './InteractiveGallery';
 export * from './Link';
+export * from './MetadataManager';
 export * from './Modal';
 export * from './Navbar';
 export * from './PriceCard';
 export * from "./ScrollHandler";
 export * from './SectionTitle';
 export * from './Tabs';
+export * from './ui';
 export * from './WhatsAppButton';
-
