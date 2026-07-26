@@ -1,4 +1,4 @@
-import { Bundles, CombinationSets, Delivery, Hero, ProductSpecs } from "@/sections";
+import { CombinationSets, Delivery, Hero, ProductSpecs } from "@/sections";
 
 export default function Page () {
     return (
@@ -6,7 +6,6 @@ export default function Page () {
             <Hero />
             <ProductSpecs />
             <Delivery />
-            <Bundles />
             <CombinationSets />
         </div>
     );

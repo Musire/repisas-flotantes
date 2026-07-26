@@ -1,9 +1,9 @@
-import path from "path"
-import { defineConfig } from "vite"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
+import path from "path"
+import { defineConfig } from "vite"
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import Pages from 'vite-plugin-pages'
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   plugins: [
@@ -22,7 +22,9 @@ export default defineConfig({
       avif: { quality: 70 },
     }),
   ],
-    
+  server: {
+    host: true
+  },    
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

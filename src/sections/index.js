@@ -1,4 +1,3 @@
-export * from './Bundles';
 export * from './CallToAction';
 export * from './CombinationSets';
 export * from './Delivery';

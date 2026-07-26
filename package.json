@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "host": "vite --host",
     "dev:clear": "cls && vite",
     "clean": "rd /s /q .next && npm run dev:clear",
     "nuke": "rd /s /q .next node_modules && del /f /q package-lock.json && npm install",
