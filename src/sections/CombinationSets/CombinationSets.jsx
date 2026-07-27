@@ -4,8 +4,8 @@ import { SetCard } from ".";
 
 export default function CombinationSets () {
     return (
-        <div id="combinations-section" className="max-w-full min-h-[50dvh] bg-darken-1/background stacked justify-center overflow-x-hidden p-6">
-            <div className="spaced">
+        <div id="combinations-section" className="max-w-full min-h-[50dvh] bg-darken-1/background stacked justify-center items-center overflow-x-hidden p-6 ">
+            <div className="spaced w-full max-w-[70dvw] ">
                 <Caption className="flex flex-col">
                     <H3 className="text-fluid-lg">Sets de Combinacion</H3>
                     <Body className="">Combina diferentes tamaños y crea el set perfecto para cada espacio</Body>
@@ -18,7 +18,7 @@ export default function CombinationSets () {
                     <ChevronRight />
                 </Link>
             </div>
-            <ul className="flex gap-4 pl-20 overflow-x-auto scrollbar-none">
+            <ul className="flex gap-4 pl-20 overflow-x-auto w-full max-w-[70dvw]  scrollbar-none">
                 <SetCard />
                 <SetCard />
                 <SetCard />
