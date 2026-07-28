@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Image = ({
   src,
-  alt,
+  alt = '',
   width,
   height,
   fill = false,
@@ -10,15 +10,14 @@ const Image = ({
   blurDataURL,
   sizes,
   className = '',
+  objectFit = 'contain', // Added objectFit prop with 'contain' as default
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Prevent Cumulative Layout Shift (CLS) by locking the exact aspect ratio
   const isDimensionsSet = width !== undefined && height !== undefined;
   const aspectRatio = isDimensionsSet ? Number(width) / Number(height) : null;
 
-  // Next-style "fill" matches absolute overlays, static matches relative boxes
   const wrapperClass = fill
     ? 'absolute inset-0 h-full w-full'
     : 'relative inline-block max-w-full';
@@ -26,13 +25,21 @@ const Image = ({
   const wrapperStyle = !fill
     ? {
         width: width ? `${width}px` : '100%',
-        aspectRatio: aspectRatio ? `${aspectRatio}` : 'auto',
+        aspectRatio: aspectRatio ? aspectRatio : 'auto',
       }
     : {};
 
-  // Tailored base image configurations with smooth transitions
+  // Dynamically map the objectFit prop to Tailwind classes
+  const fitClass = {
+    contain: 'object-contain',
+    cover: 'object-cover',
+    fill: 'object-fill',
+    none: 'object-none',
+    scaleDown: 'object-scale-down',
+  }[objectFit] || 'object-contain';
+
   const baseImageClass = `w-full block transition-all duration-500 ease-in-out ${
-    fill ? 'h-full object-cover' : 'h-auto object-initial'
+    fill ? `h-full ${fitClass}` : `h-auto ${fitClass}`
   } ${blurDataURL && !isLoaded ? 'blur-xl scale-105' : 'blur-0 scale-100'}`;
 
   return (
@@ -40,28 +47,30 @@ const Image = ({
       className={`vite-image-wrapper ${wrapperClass} ${className}`} 
       style={wrapperStyle}
     >
-      {/* Optional blur placeholder layer */}
       {blurDataURL && !isLoaded && (
         <img
           src={blurDataURL}
           alt=""
           aria-hidden="true"
+          loading={priority ? 'eager' : 'lazy'} 
           className={`${baseImageClass} absolute top-0 left-0 pointer-events-none`}
+          style={{ aspectRatio: aspectRatio ? aspectRatio : 'auto' }}
         />
       )}
       
       <img
-        src={src} // Handled automatically by Vite bundle path substitutions
+        src={src}
         alt={alt}
         sizes={sizes}
-        loading={priority ? 'eager' : 'lazy'} // Native lazy loading
+        loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
         onLoad={() => setIsLoaded(true)}
         className={baseImageClass}
+        style={{ aspectRatio: aspectRatio ? aspectRatio : 'auto' }}
         {...props}
       />
     </div>
   );
 };
 
-export default Image
+export default Image;

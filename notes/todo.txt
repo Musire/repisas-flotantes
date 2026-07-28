@@ -1,52 +1,21 @@
 
-Phase 2 — Main Layout
-
-Phase 3 — Reusable Components
-
-Phase 4 — Home Page Skeleton
-
-Phase 5 — Hero
-
-Phase 6 — Gallery
-
-Phase 7 — Size Selector
-
-Phase 8 — Specifications
-
-Phase 9 — Delivery
-
-Phase 10 — Bundle Cards
-
-Phase 11 — Combination Sets
-
-***
-
-Phase 12 — Testimonials
-
-Phase 13 — FAQ
-
-Phase 14 — CTA
-
-Phase 15 — Footer
-
-
-Then I'd wire up the data.
-
-
-
 
 Final Polish
 
-Only after everything exists:
-
-animations
-hover states
-transitions
-responsive tweaks
-lazy loading
-SEO
-Open Graph image
-favicon
-sitemap
-robots
-Netlify deployment
+├── UI (Interface & Styling)
+│   ├── Hover states
+│   ├── Responsive tweaks
+│   ├── Decorative animations
+│   └── Favicon
+│
+├── UX (Performance & Feel)
+│   ├── Page / element transitions
+│   └── Lazy loading (images, components)
+│
+├── SEO (Search & Discovery)
+│   ├── Open Graph images
+│   ├── Sitemap.xml
+│   └── Robots.txt
+│
+└── DEVOPS (Hosting & Launch)
+    └── Netlify deployment

@@ -1,10 +1,10 @@
-import { Body, Caption, H3, Link } from "@/components";
+import { Body, Caption, H3, Link, Section } from "@/components";
 import { ChevronRight } from "lucide-react";
 import { SetCard } from ".";
 
 export default function CombinationSets () {
     return (
-        <div id="combinations-section" className="max-w-full min-h-[50dvh] bg-darken-1/background stacked justify-center items-center overflow-x-hidden p-6 ">
+        <Section id="combinations-section" className="stacked justify-center items-center overflow-x-hidden p-6">
             <div className="spaced w-full max-w-[70dvw] ">
                 <Caption className="flex flex-col">
                     <H3 className="text-fluid-lg">Sets de Combinacion</H3>
@@ -12,13 +12,13 @@ export default function CombinationSets () {
                 </Caption>
                 <Link 
                     href="/combinations"  
-                    className="spaced cursor-pointer border-primary border-2 h-full normal-space rounded-md hover:bg-primary w-60"
+                    className="spaced cursor-pointer border-primary border-2 h-full normal-space rounded-md bg-primary text-whitesmoke w-60"
                 >
                     <Caption className="">Ver todas las combinaciones</Caption>
                     <ChevronRight />
                 </Link>
             </div>
-            <ul className="flex gap-4 pl-20 overflow-x-auto w-full max-w-[70dvw]  scrollbar-none">
+            <ul className="flex gap-4 overflow-x-auto w-full max-w-[70dvw]  scrollbar-none ">
                 <SetCard />
                 <SetCard />
                 <SetCard />
@@ -26,6 +26,6 @@ export default function CombinationSets () {
                 <SetCard />
                 <SetCard />
             </ul>
-        </div>
+        </Section>
     );
 }

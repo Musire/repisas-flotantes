@@ -1,9 +1,9 @@
-import { H3, Tabs, TabsList, TabsTrigger } from "@/components";
+import { H3, Section, Tabs, TabsList, TabsTrigger } from "@/components";
 import { DynamicContent } from ".";
 
 export default function ProductSpecs () {
     return (
-        <section id="specs-section" className="w-full min-h-[50dvh] bg-darken-1/background stacked items-center py-4">
+        <Section id="specs-section" className=" stacked items-center ">
             <H3 className="">
                 Elige tu tamaño de repisa
             </H3>
@@ -23,6 +23,6 @@ export default function ProductSpecs () {
                 <DynamicContent variant="mediano" />
                 <DynamicContent variant="chico" />
             </Tabs>
-        </section>
+        </Section>
     );
 }

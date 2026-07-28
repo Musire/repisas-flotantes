@@ -14,11 +14,14 @@ export default function DynamicContent ({ variant }) {
         >
             <div className="w-full spaced min-h-[
             40dvh]  gap-x-4">
-                <div className="flex-1 centered bg-darken-2/background h-72">
-                    <Image 
-                        src={''}
-                        alt={`este es tamaño ${variant}`}
-                        className="  h-40 text-whitesmoke bg-blue-950" />
+                <div className="flex-1 centered  h-72">
+                    <div className="relative  aspect-video w-full overflow-hidden ">
+                        <Image
+                            fill
+                            src={`/board_${variant}_labeled.png`}
+                            alt={`este es tamaño ${variant}`}
+                            className="  h-40 text-whitesmoke scale-125" />
+                    </div>
                 </div>
                 <article className=" flex-1 h-72">
                     <ul className="flex flex-col h-full space-y-4 ml-6 ">

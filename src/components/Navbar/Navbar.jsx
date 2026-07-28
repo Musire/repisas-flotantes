@@ -40,7 +40,7 @@ export default function Navbar () {
     const [isOpen, setOpen] = useState()
     return (
         <nav className=" bg-background w-full h-16 fixed left-0 top-0 border-b bg-card px-6 spaced shrink-0 z-50">
-            <p className="font-cormorant text-fluid-2xl font-semibold">Vela</p>
+            <p className="font-cormorant text-fluid-2xl font-semibold">Vitta</p>
             <button 
                 type="button"
                 className="cursor-pointer"

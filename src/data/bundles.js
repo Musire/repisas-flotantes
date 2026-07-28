@@ -4,19 +4,22 @@ export const bundleDataConfig = {
         {
             id: 'price-combo-001',
             title: '1 repisa',
-            imgUrl: '',
+            url: 'single_board.png',
+            alt: '',
             price: '250'
         },
         {
             id: 'price-combo-002',
             title: '2 repisas',
-            imgUrl: '',
+            url: 'double_board.png',
+            alt: '',
             price: '470'
         },
         {
             id: 'price-combo-003',
             title: '3 repisas',
-            imgUrl: '',
+            url: 'triple_board.png',
+            alt: '',
             price: '690'
         }
     ],
@@ -24,19 +27,22 @@ export const bundleDataConfig = {
         {
             id: 'price-combo-001',
             title: '1 repisa',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '225'
         },
         {
             id: 'price-combo-002',
             title: '2 repisas',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '420'
     },
         {
             id: 'price-combo-003',
             title: '3 repisas',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '620'
         }
     ],
@@ -44,19 +50,22 @@ export const bundleDataConfig = {
         {
             id: 'price-combo-001',
             title: '1 repisa',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '190'
         },
         {
             id: 'price-combo-002',
             title: '2 repisas',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '355'
         },
         {
             id: 'price-combo-003',
             title: '3 repisas',
-            imgUrl: '',
+            url: '',
+            alt: '',
             price: '520'
         }
     ]
