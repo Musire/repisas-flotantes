@@ -5,7 +5,6 @@ import { ComboCard, SpecSlot } from ".";
 
 export default function DynamicContent ({ variant }) {
     const dynamicSlot = dynamicProductSlot[variant]
-    console.log(dynamicSlot)
     const bundleData = bundleDataConfig[variant]
     return (
         <TabsContent 

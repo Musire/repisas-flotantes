@@ -4,7 +4,7 @@ import { Body, H3, Image } from "@/components";
 export default function Footer () {
     return (
         <main className="w-full flex flex-col items-center border-t   ">
-            <div className="min-h-[50dvh] grid grid-rows-[40dvh_20dvh] grid-cols-2  gap-4 w-full  ">
+            <div className="min-h-[50dvh] grid grid-rows-[30dvh_20dvh] grid-cols-2 gap-4 w-full  ">
                 <div className="flex-col flex justify-center  ">
                     <Image 
                         className=" text-whitesmoke h-48 "
