@@ -10,7 +10,7 @@ export default function Footer () {
                         className=" text-whitesmoke h-48 "
                         width={395}
                         height={275}
-                        src="footer-image.png"
+                        src="/footer-image.png"
                         alt="footer-image"
                     />
                 </div>
