@@ -14,9 +14,9 @@ export const categoryData = [
                 id: 'kitchen-combo-001',
                 slug: 'cocina-basica',
                 title: 'basico',
-                price: '',
+                price: 100,
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/kitchen.png'
             },
             {
                 id: 'kitchen-combo-002',
@@ -24,16 +24,8 @@ export const categoryData = [
                 title: 'deluxe',
                 price: '',
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/kitchen_2.png'
             },
-            {
-                id: 'kitchen-combo-003',
-                slug: 'cocina-rustico',
-                title: 'rustico',
-                price: '',
-                description: '',
-                imgUrl: ''
-            }
         ]
     },
     {
@@ -47,7 +39,7 @@ export const categoryData = [
                 title: 'basico',
                 price: '',
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/restroom.png'
             },
             {
                 id: 'restroom-combo-002',
@@ -60,20 +52,28 @@ export const categoryData = [
         ]
     },
     {
-        id: "category-hallway-001",
-        category: 'pasillo',
+        id: "category-office/bedroom-001",
+        category: 'recamara / oficina',
         description: '',
         combos: [
             {
-                id: 'hallway-combo-001',
-                slug: 'baño-basica',
-                title: 'Premium',
+                id: 'office-combo-001',
+                slug: 'oficina-basica',
+                title: 'Office',
                 price: '',
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/office.png'
+            },
+            {
+                id: 'bedroom-combo-001',
+                slug: 'recamara-basica',
+                title: 'recamara',
+                price: '',
+                description: '',
+                imgUrl: '/products/bedroom.png'
             }
         ]
-    },
+    },    
     {
         id: "category-livingroom-001",
         category: 'sala',
@@ -85,23 +85,23 @@ export const categoryData = [
                 title: 'Gallery',
                 price: '',
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/livingroom.png'
             }
         ]
     },
     {
-        id: "category-office-001",
-        category: 'oficina',
+        id: "category-hallway-001",
+        category: 'pasillo',
         description: '',
         combos: [
             {
-                id: 'office-combo-001',
-                slug: 'oficina-basica',
-                title: 'Office',
+                id: 'hallway-combo-001',
+                slug: 'pasillo-premium',
+                title: 'Premium',
                 price: '',
                 description: '',
-                imgUrl: ''
+                imgUrl: '/products/entrance.png'
             }
         ]
-    }
+    },
 ]

@@ -2,20 +2,17 @@ import { categoryData } from "@/data";
 import { CategoryContainer } from "@/sections";
 
 
+
 export default function CombinationMainPage () {
     return (
-        <main className="stacked space-y-8 flex-1">
+        <main className="grid grid-cols-2 gap-4 flex-1">
             {
-                categoryData?.map(c => {
-                    console.log(c)
-                    return (
-                        <CategoryContainer 
-                            key={c.id} 
-                            category={c.category} 
-                            data={c.combos} 
-                        />
-                    )
-                })
+                categoryData?.map(c => <CategoryContainer 
+                        key={c.id} 
+                        category={c.category} 
+                        data={c.combos} 
+                    />
+                )
             }
         </main>
     );

@@ -1,6 +1,10 @@
 import { Body, Caption, H3, Link, Section } from "@/components";
 import { ChevronRight } from "lucide-react";
-import { SetCard } from ".";
+import { CategoryCard, SetCard } from ".";
+import { getBySlug } from "@/data";
+
+const slugList = ['cocina-deluxe', 'recamara-basica', 'oficina-basica', 'cocina-basica',
+    'pasillo-premium', 'baño-completo', 'baño-basica', 'sala-galeria' ]
 
 export default function CombinationSets () {
     return (
@@ -19,12 +23,10 @@ export default function CombinationSets () {
                 </Link>
             </div>
             <ul className="flex gap-4 overflow-x-auto w-full max-w-[70dvw]  scrollbar-none ">
-                <SetCard />
-                <SetCard />
-                <SetCard />
-                <SetCard />
-                <SetCard />
-                <SetCard />
+                {slugList.map(slug => {
+                    const card = getBySlug(slug)
+                    return <CategoryCard key={card.id} data={card} />
+                })}
             </ul>
         </Section>
     );
