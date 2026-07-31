@@ -30,7 +30,7 @@ export default function Carrousel({ images = [] }) {
   }
 
   return (
-    <div className="relative w-full max-w-1/2">
+    <div className="relative w-full md:max-w-1/2">
       <Carousel 
         setApi={setApi} 
         opts={{ loop: true }} 
@@ -40,14 +40,11 @@ export default function Carrousel({ images = [] }) {
           {/* 2. Map through the dynamic prop array */}
           {images.map((image, index) => (
             <CarouselItem key={image.id || index}>
-              <div className="relative aspect-video w-full overflow-hidden ">
-                <Image
-                    fill 
-                    src={image.url}
-                    alt={image.title || `Slide ${index + 1}`}
-                    className="h-full w-full object-contain transition-transform duration-300 "
-                  />
-              </div>
+              <Image
+                src={image.url}
+                alt={image.title || `Slide ${index + 1}`}
+                className=" transition-transform duration-300 "
+              />
             </CarouselItem>
           ))}
         </CarouselContent>

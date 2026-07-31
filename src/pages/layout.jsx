@@ -21,7 +21,7 @@ export default function MainLayout() {
 
   return (
     <HelmetProvider>
-      <div className="max-w-dvw min-h-dvh flex flex-col overflow-x-hidden overflow-y-auto bg-background text-foreground  scrollbar-adjust">
+      <div className="max-w-dvw min-h-dvh flex flex-col overflow-x-hidden overflow-y-auto bg-background text-foreground scrollbar-adjust">
         <MetadataManager />
         <ScrollHandler />
         <Navbar />

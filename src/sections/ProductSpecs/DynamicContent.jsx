@@ -9,11 +9,11 @@ export default function DynamicContent ({ variant }) {
     return (
         <TabsContent 
             value={variant} 
-            className="p-4 w-full h-fit flex flex-col items-center space-y-12 min-h-[40dvh]"
+            className=" w-full h-fit flex flex-col items-center space-y-12 min-h-[40dvh]"
         >
             <div className="w-full spaced min-h-[
             40dvh]  gap-x-4">
-                <div className="flex-1 centered h-96 bg-o">
+                <div className="flex-1 centered h-96 ">
                     <Image
                         src={`/board_${variant}_labeled.png`}
                         alt={`este es tamaño ${variant}`}
@@ -28,7 +28,7 @@ export default function DynamicContent ({ variant }) {
                     </ul>
                 </article>
             </div>
-            <ul className="flex evenly min-h-[40dvh] h-fit gap-4">
+            <ul className="w-full spaced min-h-[40dvh] h-fit ">
                 {bundleData?.map(card => {
                     return <ComboCard key={card.id} data={card} />
                 })}

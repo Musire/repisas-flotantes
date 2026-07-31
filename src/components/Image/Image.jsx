@@ -33,7 +33,7 @@ const Image = ({
 
   return (
     <div
-      className={`vite-image-wrapper overflow-hidden ${wrapperClass} ${className}`}
+      className={` overflow-hidden ${wrapperClass} ${className}`}
       style={wrapperStyle}
     >
       {/* Blur Placeholder Layer (LQIP) */}

@@ -39,7 +39,7 @@ const tabs = [
 export default function Navbar () {
     const [isOpen, setOpen] = useState()
     return (
-        <nav className=" bg-background w-full h-16 fixed left-0 top-0 border-b bg-card px-6 spaced shrink-0 z-50">
+        <nav className=" bg-background w-full h-16 fixed left-0 top-0 border-b bg-card xs:px-6 lg:px-24 spaced shrink-0 z-50">
             <Link href="/" className="font-cormorant text-fluid-2xl font-semibold">Repisas Vitta</Link>
             <button 
                 type="button"
