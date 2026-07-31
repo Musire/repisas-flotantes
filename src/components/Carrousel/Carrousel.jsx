@@ -41,16 +41,12 @@ export default function Carrousel({ images = [] }) {
           {images.map((image, index) => (
             <CarouselItem key={image.id || index}>
               <div className="relative aspect-video w-full overflow-hidden ">
-                <article className="">
-                  <Image
+                <Image
                     fill 
                     src={image.url}
                     alt={image.title || `Slide ${index + 1}`}
-                    objectFit="contain"
                     className="h-full w-full object-contain transition-transform duration-300 "
                   />
-                </article>
-                
               </div>
             </CarouselItem>
           ))}

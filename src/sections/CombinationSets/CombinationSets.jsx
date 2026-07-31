@@ -1,7 +1,7 @@
 import { Body, Caption, H3, Link, Section } from "@/components";
-import { ChevronRight } from "lucide-react";
-import { CategoryCard, SetCard } from ".";
 import { getBySlug } from "@/data";
+import { ChevronRight } from "lucide-react";
+import { CategoryCard } from ".";
 
 const slugList = ['cocina-deluxe', 'recamara-basica', 'oficina-basica', 'cocina-basica',
     'pasillo-premium', 'baño-completo', 'baño-basica', 'sala-galeria' ]

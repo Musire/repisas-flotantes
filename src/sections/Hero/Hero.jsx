@@ -11,7 +11,7 @@ export default function Hero () {
                     Repisas de Madera de Alta Resistencia para tu Hogar.
                 </H2>
                 <Body className="flex flex-col">
-                    <Caption className="">Diseñadas en <bold className="font-semibold text-primary">Chihuahua</bold></Caption>
+                    <Caption className="">Diseñadas en <strong className="font-semibold text-primary">Chihuahua</strong></Caption>
                     <Caption className="">
                         Soportan hasta 15 kg con herrajes ocultos.
                     </Caption>

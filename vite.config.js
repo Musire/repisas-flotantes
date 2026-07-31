@@ -2,6 +2,7 @@ import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import path from "path"
 import { defineConfig } from "vite"
+import { imagetools } from 'vite-imagetools'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import Pages from 'vite-plugin-pages'
 
@@ -15,6 +16,7 @@ export default defineConfig({
       routeStyle: 'next', 
       extensions: ['jsx', 'js'], 
     }),
+    imagetools(),
     ViteImageOptimizer({
       jpg: { quality: 80 },
       png: { quality: 80 },

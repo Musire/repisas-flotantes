@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 function findScrollContainer(element) {
@@ -6,7 +6,10 @@ function findScrollContainer(element) {
   let parent = element.parentElement;
   while (parent && parent !== document.documentElement) {
     const style = window.getComputedStyle(parent);
-    if ((style.overflowY === 'auto' || style.overflowY === 'scroll') && parent.scrollHeight > parent.clientHeight) {
+    if (
+      (style.overflowY === 'auto' || style.overflowY === 'scroll') &&
+      parent.scrollHeight > parent.clientHeight
+    ) {
       return parent;
     }
     parent = parent.parentElement;
@@ -14,33 +17,16 @@ function findScrollContainer(element) {
   return document.getElementById('app-layout-container') || window;
 }
 
-export default function Link({ 
-  href, 
-  children, 
-  className = '', 
-  onClick = null, 
-  ...props 
+export default function Link({
+  href,
+  children,
+  className = '',
+  onClick = null,
+  ...props
 }) {
   const navigate = useNavigate();
   const location = useLocation();
   const linkRef = useRef(null);
-
-  // Next.js-style Prefetching
-  useEffect(() => {
-    if (!href || href.startsWith('#')) return;
-    const [path] = href.split('#');
-    if (!path || path === location.pathname) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        import(/* @vite-ignore */ path).catch(() => {});
-        if (linkRef.current) observer.unobserve(linkRef.current);
-      }
-    }, { threshold: 0.1 });
-
-    if (linkRef.current) observer.observe(linkRef.current);
-    return () => observer.disconnect();
-  }, [href, location.pathname]);
 
   const handleClick = (e) => {
     if (typeof onClick === 'function') {
@@ -59,7 +45,7 @@ export default function Link({
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-      window.history.pushState(null, '', '#'); 
+      window.history.pushState(null, '', '#');
       return;
     }
 
@@ -67,7 +53,10 @@ export default function Link({
     if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element && container && container !== window) {
-        const targetPosition = element.getBoundingClientRect().top + container.scrollTop - container.getBoundingClientRect().top;
+        const targetPosition =
+          element.getBoundingClientRect().top +
+          container.scrollTop -
+          container.getBoundingClientRect().top;
         container.scrollTo({ top: targetPosition, behavior: 'smooth' });
         window.history.pushState(null, '', href);
       } else if (element) {
@@ -78,12 +67,18 @@ export default function Link({
 
     const [path, hash] = href.split('#');
 
+    // Resolve relative paths so `/` and relative URLs compare correctly
+    const targetPath = new URL(path, window.location.origin).pathname;
+
     // Case 3: Navigating within the exact same path
-    if (path === location.pathname) {
+    if (targetPath === location.pathname) {
       if (hash) {
         const element = document.querySelector(`#${hash}`);
         if (element && container && container !== window) {
-          const targetPosition = element.getBoundingClientRect().top + container.scrollTop - container.getBoundingClientRect().top;
+          const targetPosition =
+            element.getBoundingClientRect().top +
+            container.scrollTop -
+            container.getBoundingClientRect().top;
           container.scrollTo({ top: targetPosition, behavior: 'smooth' });
           window.history.pushState(null, '', `#${hash}`);
         } else if (element) {
@@ -100,13 +95,12 @@ export default function Link({
     }
 
     // Case 4: Navigating to a DIFFERENT route
-    // First, immediately reset the container & window scroll position
     if (container && container !== window) {
       container.scrollTop = 0;
     }
     window.scrollTo(0, 0);
 
-    // Then perform navigation
+    // Perform navigation
     navigate(href);
 
     // If target URL contains a hash, attempt to scroll to it post-render
@@ -121,7 +115,13 @@ export default function Link({
   };
 
   return (
-    <a ref={linkRef} href={href} onClick={handleClick} className={className} {...props}>
+    <a
+      ref={linkRef}
+      href={href}
+      onClick={handleClick}
+      className={className}
+      {...props}
+    >
       {children}
     </a>
   );

@@ -1,72 +1,63 @@
 import { useState } from 'react';
 
 const Image = ({
-  src,
+  src, // Accepts string URL OR imported LQIP object ({ src, lqip })
+  srcSet, // Optional: srcset string from vite-imagetools
+  sizes = '100vw', // Default sizes to 100vw so srcSet works out of the box
   alt = '',
-  width,
-  height,
   fill = false,
   priority = false,
-  blurDataURL,
-  sizes,
+  aspectRatio = '3/2',
   className = '',
-  objectFit = 'contain', // Added objectFit prop with 'contain' as default
   ...props
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const isDimensionsSet = width !== undefined && height !== undefined;
-  const aspectRatio = isDimensionsSet ? Number(width) / Number(height) : null;
+  // 1. Derive src string and blurDataURL directly from the imported object
+  const imageSrc = typeof src === 'object' ? src?.src : src;
+  const blurDataURL = typeof src === 'object' ? src?.lqip : null;
 
+  // 2. Derive object-fit behavior automatically based on `fill`
+  const fitClass = fill ? 'object-cover object-center' : 'object-contain';
+
+  // 3. Layout modes & CLS Defense
   const wrapperClass = fill
     ? 'absolute inset-0 h-full w-full'
-    : 'relative inline-block max-w-full';
+    : 'relative inline-block w-full';
 
-  const wrapperStyle = !fill
-    ? {
-        width: width ? `${width}px` : '100%',
-        aspectRatio: aspectRatio ? aspectRatio : 'auto',
-      }
-    : {};
+  // Fallback aspect-ratio style to lock space before image loads
+  const wrapperStyle = !fill ? { aspectRatio } : {};
 
-  // Dynamically map the objectFit prop to Tailwind classes
-  const fitClass = {
-    contain: 'object-contain',
-    cover: 'object-cover',
-    fill: 'object-fill',
-    none: 'object-none',
-    scaleDown: 'object-scale-down',
-  }[objectFit] || 'object-contain';
-
-  const baseImageClass = `w-full block transition-all duration-500 ease-in-out ${
-    fill ? `h-full ${fitClass}` : `h-auto ${fitClass}`
-  } ${blurDataURL && !isLoaded ? 'blur-xl scale-105' : 'blur-0 scale-100'}`;
+  // If there's no blur placeholder layer, show the image immediately to avoid transparent render bugs
+  const showImage = !blurDataURL || isLoaded;
 
   return (
-    <div 
-      className={`vite-image-wrapper ${wrapperClass} ${className}`} 
+    <div
+      className={`vite-image-wrapper overflow-hidden ${wrapperClass} ${className}`}
       style={wrapperStyle}
     >
+      {/* Blur Placeholder Layer (LQIP) */}
       {blurDataURL && !isLoaded && (
         <img
           src={blurDataURL}
           alt=""
           aria-hidden="true"
-          loading={priority ? 'eager' : 'lazy'} 
-          className={`${baseImageClass} absolute top-0 left-0 pointer-events-none`}
-          style={{ aspectRatio: aspectRatio ? aspectRatio : 'auto' }}
+          className="absolute inset-0 h-full w-full object-cover filter blur-xl scale-110 pointer-events-none"
         />
       )}
-      
+
+      {/* Main High-Res Image */}
       <img
-        src={src}
-        alt={alt}
+        src={imageSrc}
+        srcSet={srcSet}
         sizes={sizes}
+        alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
         onLoad={() => setIsLoaded(true)}
-        className={baseImageClass}
-        style={{ aspectRatio: aspectRatio ? aspectRatio : 'auto' }}
+        className={`w-full h-full ${fitClass} transition-opacity duration-500 ease-out ${
+          showImage ? 'opacity-100' : 'opacity-0'
+        }`}
         {...props}
       />
     </div>

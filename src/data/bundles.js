@@ -6,7 +6,7 @@ export const bundleDataConfig = {
             title: '1 repisa grande',
             url: 'single_board.png',
             alt: 'imagen-de-tabla-grande-basico',
-            scale: 'scale-150',
+            scale: '',
             price: '250',
             tier: 'Paquete Basico'
         },
@@ -16,7 +16,7 @@ export const bundleDataConfig = {
             title: '2 repisas grandes',
             url: 'double_board.png',
             alt: 'imagen-de-tabla-grande-duo',
-            scale: 'scale-200',
+            scale: '',
             price: '470',
             ahorro: "$30"
         },
@@ -26,7 +26,7 @@ export const bundleDataConfig = {
             title: '3 repisas grandes',
             url: 'triple_board.png',
             alt: 'imagen-de-tabla-grande-trio',
-            scale: 'scale-200',
+            scale: '',
             price: '690',
             ahorro: '$60'
         }
@@ -38,7 +38,7 @@ export const bundleDataConfig = {
             title: '1 repisa mediana',
             url: 'single_board.png',
             alt: 'imagen-de-tabla-mediano-basico',
-            scale: 'scale-150',
+            scale: '',
             price: '225',
             ahorro: '$60'
         },
@@ -48,7 +48,7 @@ export const bundleDataConfig = {
             title: '1 repisa medianas',
             url: 'double_board.png',
             alt: 'imagen-de-tabla-mediano-duo',
-            scale: 'scale-200',
+            scale: '',
             price: '420',
             ahorro: '$30'
         },
@@ -58,7 +58,7 @@ export const bundleDataConfig = {
             title: '3 repisas medianas',
             url: 'triple_board.png',
             alt: 'imagen-de-tabla-mediano-trio',
-            scale: 'scale-200',
+            scale: '',
             price: '620',
             ahorro: '$45'
         }
@@ -70,7 +70,7 @@ export const bundleDataConfig = {
             title: '1 repisa chica',
             url: 'single_board.png',
             alt: 'imagen-de-tabla-chico-basico',
-            scale: 'scale-150',
+            scale: '',
             price: '190',
             ahorro: '$60'
         },
@@ -80,7 +80,7 @@ export const bundleDataConfig = {
             title: '1 repisa chicas',
             url: 'double_board.png',
             alt: 'imagen-de-tabla-chico-duo',
-            scale: 'scale-200',
+            scale: '',
             price: '355',
             ahorro: '$25'
         },
@@ -90,7 +90,7 @@ export const bundleDataConfig = {
             title: '3 repisas chicas',
             url: 'triple_board.png',
             alt: 'imagen-de-tabla-chico-trio',
-            scale: 'scale-200',
+            scale: '',
             price: '520',
             ahorro: '$50'
         }

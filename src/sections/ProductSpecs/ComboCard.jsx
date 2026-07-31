@@ -10,10 +10,8 @@ export default function ComboCard ({ data }) {
             <div className="relative  aspect-video w-full overflow-hidden ">
                 <Image
                     fill
-                    objectFit="object-contain"
                     src={url}
                     alt={alt}
-                    width={1000}
                     className={`text-whitesmoke ${scale} `} />
             </div>
             <Body className="text-center text-fluid-lg flex items-center justify-center space-x-2  uppercase">
