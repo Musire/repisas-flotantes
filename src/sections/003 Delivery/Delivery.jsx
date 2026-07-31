@@ -9,7 +9,7 @@ export default function Delivery () {
             className="stacked space-y-16 items-center"
         >
             <H3 className="" >Opciones de entrega y servicio</H3>
-            <ul className="flex spaced w-full">
+            <ul className="flex xs:max-md:flex-col md:justify-between md:items-center w-full gap-4">
                 {deliveryData?.map(option => {
                     return <DeliveryCard key={option.id} data={option}/>
                 })}

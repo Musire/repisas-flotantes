@@ -33,7 +33,7 @@ const Image = ({
 
   return (
     <div
-      className={` overflow-hidden ${wrapperClass} ${className}`}
+      className={` h-full overflow-hidden ${wrapperClass} ${className}`}
       style={wrapperStyle}
     >
       {/* Blur Placeholder Layer (LQIP) */}

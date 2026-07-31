@@ -5,31 +5,25 @@ import { useState } from "react";
 const tabs = [
     {
         id: 'hero-section-link',
-        href: '#hero-section',
+        href: '/#hero-section',
         icon: 'icon',
         label: 'Gallery'
     },
     {
         id: 'specs-section-link',
-        href: '#specs-section',
+        href: '/#specs-section',
         icon: 'icon',
         label: 'Specs'
     },
     {
         id: 'delivery-section-link',
-        href: '#delivery-section',
+        href: '/#delivery-section',
         icon: 'icon',
         label: 'Delivery Options'
     },
     {
-        id: 'bundles-section-link',
-        href: '#bundles-section',
-        icon: 'icon',
-        label: 'Bundles'
-    },
-    {
         id: 'combinations-section-link',
-        href: '#combinations-section',
+        href: '/#combinations-section',
         icon: 'icon',
         label: 'Combination Sets'
     }

@@ -9,10 +9,10 @@ const slugList = ['cocina-deluxe', 'recamara-basica', 'oficina-basica', 'cocina-
 export default function CombinationSets () {
     return (
         <Section id="combinations-section" className="stacked space-y-20 justify-center items-center overflow-x-hidden ">
-            <div className="spaced w-full  ">
-                <Caption className="stacked space-y-4">
-                    <H3 className="text-fluid-lg">Sets de Combinacion</H3>
-                    <Body className="">Combina diferentes tamaños y crea el set perfecto para cada espacio</Body>
+            <div className="flex xs:max-md:items-center md:justify-between xs:max-md:flex-col xs:max-md:space-y-4 w-full  ">
+                <Caption className="stacked space-y-4 xs:max-md:text-center">
+                    <H3 className=" xs:max-md:text-fluid-2xl text-fluid-lg">Sets de Combinacion</H3>
+                    <Body className="text-balance">Combina diferentes tamaños y crea el set perfecto para cada espacio</Body>
                 </Caption>
                 <Link 
                     href="/combinations"  

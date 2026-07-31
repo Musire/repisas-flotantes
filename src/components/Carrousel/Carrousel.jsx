@@ -1,19 +1,19 @@
-import { Image } from "@/components"
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
+  CarouselItem
 } from "@/components/ui/carousel"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import * as React from "react"
+import { useEffect, useState } from "react"
+import { Image } from "../Image"
 
 // 1. Destructure the "images" prop (with an empty array default fallback)
 export default function Carrousel({ images = [] }) {
-  const [api, setApi] = React.useState(undefined)
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
+  const [api, setApi] = useState(undefined)
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) return
 
     setCount(api.scrollSnapList().length)
@@ -30,20 +30,20 @@ export default function Carrousel({ images = [] }) {
   }
 
   return (
-    <div className="relative w-full md:max-w-1/2">
+    <div className="relative xs:max-md:size-120 size-96 centered-col ">
       <Carousel 
         setApi={setApi} 
         opts={{ loop: true }} 
-        className="w-full overflow-hidden rounded-xl "
+      className=" w-full h-full overflow-hidden  "
       >
-        <CarouselContent>
-          {/* 2. Map through the dynamic prop array */}
+        <CarouselContent className="h-96 w-full " >
           {images.map((image, index) => (
-            <CarouselItem key={image.id || index}>
+            <CarouselItem key={image.id || index} className=" h-full w-full centered">
               <Image
                 src={image.url}
                 alt={image.title || `Slide ${index + 1}`}
-                className=" transition-transform duration-300 "
+                aspectRatio=""
+                className="max-w-full transition-transform duration-300 "
               />
             </CarouselItem>
           ))}
@@ -60,7 +60,6 @@ export default function Carrousel({ images = [] }) {
           <ChevronLeft className="h-4 w-4" />
           <span className="sr-only">Previous slide</span>
         </button>
-
         <button
           type="button"
           className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 rounded-full z-10 hidden sm:flex bg-darken-1/background size-8 centered backdrop-blur-sm hover:bg-darken-2/background  "

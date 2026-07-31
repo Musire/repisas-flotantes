@@ -11,7 +11,7 @@ export default function DynamicContent ({ variant }) {
             value={variant} 
             className=" w-full h-fit flex flex-col items-center space-y-12 min-h-[40dvh]"
         >
-            <div className="w-full spaced min-h-[
+            <div className="w-full md:spaced min-h-[
             40dvh]  gap-x-4">
                 <div className="flex-1 centered h-96 ">
                     <Image
@@ -28,7 +28,7 @@ export default function DynamicContent ({ variant }) {
                     </ul>
                 </article>
             </div>
-            <ul className="w-full spaced min-h-[40dvh] h-fit ">
+            <ul className="w-full flex xs:max-md:flex-col gap-6 md:spaced min-h-[40dvh] h-fit ">
                 {bundleData?.map(card => {
                     return <ComboCard key={card.id} data={card} />
                 })}

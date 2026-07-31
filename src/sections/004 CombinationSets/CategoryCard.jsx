@@ -8,7 +8,7 @@ export default function CategoryCard({ data }) {
     return (
         <li>
             <Link 
-                href={`combinations/`} 
+                href={`/combinations/${slug}`} 
                 className="shrink-0 centered bg-darken-3/background rounded-lg relative aspect-3/2 w-full overflow-hidden group block h-52"
             >
                 <Image 

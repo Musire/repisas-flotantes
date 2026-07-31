@@ -17,9 +17,9 @@ export default function HeroArticle () {
                         Acabado premium texturizado tipo madera.
                     </Caption>
                 </Body>
-                <button type="button" className="text-whitesmoke/87  normal-space rounded-lg flex items-center bg-primary w-full max-w-60 cursor-pointer space-x-2">
-                    <Whatsapp />
-                    <Caption className="">Ordenar por Whatsapp</Caption>
+                <button type="button" className="text-whitesmoke/87  normal-space rounded-lg flex items-center xs:max-md:justify-center  bg-primary w-full md:max-w-60 cursor-pointer space-x-4">
+                    <Whatsapp size={30} />
+                    <Caption className="xs:max-md:text-fluid-lg">Ordenar por Whatsapp</Caption>
                 </button>
                 <ul className="flex space-x-10 items-center">
                     <li className="grid grid-cols-[3.5rem_1fr] gap-x-2 grid-rows-2 items-center ">

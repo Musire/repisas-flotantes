@@ -11,7 +11,7 @@ export default function Footer () {
                     <Body className="text-pretty">Haz clic abajo para consultar disponibilidad de stock y agendar tu entrega hoy mismo</Body>
                 </div>
                 <div className="bg-primary col-span-2 centered  p-4">
-                    <button type="button" className="cursor-pointer grid grid-cols-[3rem_1fr] text-whitesmoke grid-rows-2 gap-x-4 px-6 py-4 border border-border rounded-lg w-full items-center">
+                    <button type="button" className="cursor-pointer grid grid-cols-[3rem_1fr] text-whitesmoke grid-rows-2 gap-x-4 px-6 py-4 border border-border rounded-lg xs:max-md:w-full items-center">
                         <Whatsapp  size={50} className=" text-whitesmoke  row-span-2" />
                         <Body className="text-fluid-lg">Ordenar por Whatsapp</Body>
                         <Body className="text-whitesmoke/60">Respuesta rapida y atencion </Body>

@@ -1,9 +1,9 @@
-import * as React from "react"
 import useEmblaCarousel from "embla-carousel-react";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const CarouselContext = React.createContext(null)
 
@@ -113,7 +113,7 @@ function CarouselContent({
       <div
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "" : " flex-col",
           className
         )}
         {...props} />
@@ -133,7 +133,7 @@ function CarouselItem({
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        "min-w-0 shrink-0 grow-0 basis-full",
+        "min-w-0 shrink-0 grow-0 basis-full ",
         orientation === "horizontal" ? "pl-4" : "pt-4",
         className
       )}
@@ -191,4 +191,5 @@ function CarouselNext({
   );
 }
 
-export { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, useCarousel };
+export { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, useCarousel };
+
