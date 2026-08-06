@@ -1,16 +1,24 @@
 
 
+Standard 
+1200 x 800 px
+
+High-Res / Zoomable 
+1800 x 1200 px
+
+Mobile / Thumbnail  
+600 x 400 px
+
+
+
+
+
 Final Polish
 
 ├── UI (Interface & Styling)
 │   ├── Hover states
 │   ├── Responsive tweaks
-│   ├── Decorative animations
 │   └── Favicon
-│
-├── UX (Performance & Feel)
-│   ├── Page / element transitions
-│   └── Lazy loading (images, components)
 │
 ├── SEO (Search & Discovery)
 │   ├── Open Graph images
@@ -19,3 +27,4 @@ Final Polish
 │
 └── DEVOPS (Hosting & Launch)
     └── Netlify deployment
+

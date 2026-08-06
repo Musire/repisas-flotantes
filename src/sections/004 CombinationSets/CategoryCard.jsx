@@ -20,7 +20,7 @@ export default function CategoryCard({ data }) {
                 />
                 <div className="h-1/2 group-hover:h-full w-full absolute bottom-0 left-0 bg-linear-to-b from-transparent to-black flex items-center justify-center group-hover:items-start p-4 snappy group-hover:bg-black/30">
                     <article className="relative space-y-4 stacked">
-                        <Body className="text-background group-hover:text-whitesmoke/87 flex items-center space-x-4 capitalize">
+                        <Body className="text-background group-hover:text-whitesmoke/87 flex items-center space-x-4 capitalize translate-y-4">
                             {title}
                         </Body>
                         <BodySm className="hidden group-hover:block text-whitesmoke/60">

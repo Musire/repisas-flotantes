@@ -49,7 +49,7 @@ export function TabsTrigger({ value, children, className }) {
       data-state={isActive ? 'active' : 'inactive'}
       onClick={() => setActiveTab(value)}
       className={cn(
-        'min-w-24 capitalize cursor-pointer',
+        'min-w-24 capitalize cursor-pointer bg-lighten-3/background',
         isActive && 'bg-darken-2/background font-medium',
         className
       )}

@@ -3,5 +3,5 @@ export * from './002 ProductSpecs';
 export * from './003 Delivery';
 export * from './004 CombinationSets';
 export * from './005 Footer';
-export * from './FAQ';
+export * from './006 Support';
 

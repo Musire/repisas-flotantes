@@ -25,7 +25,7 @@ export default function MainLayout() {
         <MetadataManager />
         <ScrollHandler />
         <Navbar />
-        <main ref={mainContainerRef} className="py-6 flex flex-1 mt-16 px-4">
+        <main ref={mainContainerRef} className="py-6 flex flex-1 mt-16 px-4 ">
             <Outlet /> 
         </main>
         <Footer />

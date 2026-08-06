@@ -30,20 +30,20 @@ export default function Carrousel({ images = [] }) {
   }
 
   return (
-    <div className="relative xs:max-md:size-120 size-96 centered-col ">
+    <div className="">
       <Carousel 
         setApi={setApi} 
         opts={{ loop: true }} 
-      className=" w-full h-full overflow-hidden  "
+        className="w-full h-full "
       >
-        <CarouselContent className="h-96 w-full " >
+        <CarouselContent className=" h-full w-full md:max-w-2xl" >
           {images.map((image, index) => (
-            <CarouselItem key={image.id || index} className=" h-full w-full centered">
+            <CarouselItem key={image.id || index} className=" aspect-4/3">
               <Image
+                key={image.id || index} 
                 src={image.url}
                 alt={image.title || `Slide ${index + 1}`}
-                aspectRatio=""
-                className="max-w-full transition-transform duration-300 "
+                className="xs:rounded-xl md:rounded-3xl "
               />
             </CarouselItem>
           ))}
@@ -54,7 +54,7 @@ export default function Carrousel({ images = [] }) {
           type="button"
           variant="outline"
           size="icon"
-          className="absolute cursor-pointer  left-4 top-1/2 -translate-y-1/2 rounded-full z-10 hidden sm:flex bg-darken-2/background backdrop-blur-sm hover:bg-darken-2/background size-8 centered active:scale-100 "
+          className="absolute cursor-pointer  left-8 top-1/2 -translate-y-1/2 rounded-full z-10 hidden sm:flex bg-darken-2/background backdrop-blur-sm hover:bg-darken-2/background size-8 centered active:scale-100 "
           onClick={() => api?.scrollPrev()}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -71,7 +71,7 @@ export default function Carrousel({ images = [] }) {
       </Carousel>
 
       {/* Dot Indicators */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-2">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}

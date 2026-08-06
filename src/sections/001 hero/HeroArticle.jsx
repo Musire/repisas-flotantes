@@ -1,11 +1,10 @@
-import { Whatsapp } from "@/assets";
 import { Body, Caption, H2 } from "@/components";
 import { ShieldCheck, Star } from "lucide-react";
 
 export default function HeroArticle () {
     return (
-        <div className="md:max-w-1/2 stacked xs:max-md:items-center space-y-8">
-                <H2 className="text-fluid-2xl text-primary xs:max-md:text-center">
+        <div className="md:max-w-1/2 mt-20 md:mt-0 stacked xs:max-md:items-center space-y-12 md:justify-center ">
+                <H2 className="text-2xl md:text-5xl md:text-balance text-primary xs:max-md:text-center md:font-bold">
                     Hecho de Madera de Alta Resistencia para tu Hogar.
                 </H2>
                 <Body className="flex flex-col xs:max-md:text-center">
@@ -17,11 +16,8 @@ export default function HeroArticle () {
                         Acabado premium texturizado tipo madera.
                     </Caption>
                 </Body>
-                <button type="button" className="text-whitesmoke/87  normal-space rounded-lg flex items-center xs:max-md:justify-center  bg-primary w-full md:max-w-60 cursor-pointer space-x-4">
-                    <Whatsapp size={30} />
-                    <Caption className="xs:max-md:text-fluid-lg">Ordenar por Whatsapp</Caption>
-                </button>
-                <ul className="flex space-x-10 items-center">
+                
+                <ul className="flex space-x-10 items-center ">
                     <li className="grid grid-cols-[3.5rem_1fr] gap-x-2 grid-rows-2 items-center ">
                         <ShieldCheck size={40} strokeWidth={1} className="row-span-2" />
                         <Caption className="">Material Certificado</Caption>
