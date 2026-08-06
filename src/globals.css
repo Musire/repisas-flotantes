@@ -146,7 +146,7 @@
   /*breakpoints*/
   --variant-hover: (&: hover);
   --breakpoint-xs: 319px;
-  --breakpoint-mobile: 475px;
+  --breakpoint-mobile: 425px;
   --breakpoint-mini: 520px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

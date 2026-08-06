@@ -4,7 +4,7 @@ import { HeroArticle } from ".";
 
 export default function Hero () {
     return (
-        <Section id="hero-section" className="flex flex-col-reverse xs:max-md:items-center xs:max-md:space-y-20 md:flex-row md:justify-evenly md:space-x-6">
+        <Section id="hero-section" className="flex flex-col-reverse xs:max-lg:items-center xs:max-lg:space-y-10 md:flex-col lg:flex-row lg:justify-evenly md:space-x-6 ">
             <HeroArticle />
             <Carrousel images={carrouselImages} />
         </Section>

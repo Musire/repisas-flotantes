@@ -3,7 +3,7 @@ import { Body, Image } from "@/components";
 export default function ComboCard ({ data }) {
     const { price, url, alt,  } = data
     return (
-        <li className=' shrink-0 xsw-72 md:w-96 lg:w-52 aspect-4/3 overflow-hidden  space-y-4 font-inter relative p-0 rounded-xl h-fit lg:odd:self-start lg:even:self-end'>
+        <li className=' shrink-0 xs:max-md:w-[70dvw] md:w-96 lg:w-52 aspect-4/3 overflow-hidden  space-y-4 font-inter relative p-0 rounded-xl h-fit '>
             <div className="absolute w-full   overflow-hidden ">
                 <Image
                     src={url}
