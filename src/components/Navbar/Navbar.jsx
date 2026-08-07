@@ -30,7 +30,7 @@ const tabs = [
 
 export default function Navbar () {
     return (
-        <div className="">
+        <div className="bg-primary">
             <MobileNav tabs={tabs} />
             <DesktopNav tabs={tabs} />
         </div>

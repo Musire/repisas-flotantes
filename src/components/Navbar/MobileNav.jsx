@@ -8,8 +8,8 @@ import { useState } from "react";
 export default function MobileNav ({ tabs }) {
     const [isOpen, setOpen] = useState()
     return (
-        <nav className="md:hidden bg-background w-full h-16 fixed left-0 top-0 border-b bg-card xs:px-10 lg:px-24 spaced shrink-0 z-50">
-            <Link href="/" className="font-inter text-fluid-2xl font-medium">Repisas Vitta</Link>
+        <nav className="md:hidden  bg-primary text-whitesmoke/60 w-full h-16 fixed left-0 top-0 border-b bg-card xs:px-10 lg:px-24 spaced shrink-0 z-50">
+            <Link href="/" className="font-inter text-fluid-2xl font-medium text-whitesmoke">Repisas Vitta</Link>
             <button 
                 type="button"
                 className="cursor-pointer"
@@ -26,7 +26,7 @@ export default function MobileNav ({ tabs }) {
                                 key={link.id} 
                                 href={link.href}
                                 onClick={() => setOpen(false) }
-                                className="normal-space text-center bg-background hover:bg-darken-1/background active:bg-lighten-1/background" 
+                                className="normal-space text-center bg-background hover:bg-darken-1/background active:bg-lighten-1/background text-auto" 
                                 >
                                     {link.label}
                                 </Link>
